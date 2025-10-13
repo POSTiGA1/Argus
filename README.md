@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <a href="">
     <picture>
@@ -9,11 +8,10 @@
   <br>
 </h1>
 <p align="center">
-   A Python-based toolkit for  Information Gathering and <br>Reconnaissance
+   A Python-based toolkit for Information Gathering & Reconnaissance
 </p>
 
-![screenshot](https://i.imgur.com/BXiJ9bC.gif)
-
+![screenshot](https://i.imgur.com/HIQWPPO.gif)
 ---
 
 ## About The Project
@@ -32,150 +30,378 @@ This tool is intended for **educational and ethical use only**. The author is no
 
 Take a look at Argus in action:
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/lS64CUp.png" width="49%">
-  <img src="https://i.imgur.com/8VtXyEW.png" width="49%">
+  <img src="https://i.imgur.com/uUjTbCb.png" width="49%">
+  <img src="https://i.imgur.com/iPqLYX6.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/rEIPl2h.png" width="49%">
-  <img src="https://i.imgur.com/TVmc8gf.png" width="49%">
+  <img src="https://i.imgur.com/SwcLyfU.png" width="49%">
+  <img src="https://i.imgur.com/bfxcx88.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/1I6x3Gp.png" width="49%">
-  <img src="https://i.imgur.com/9EZqNvK.png" width="49%">
+  <img src="https://i.imgur.com/SgPJjH7.png" width="49%">
+  <img src="https://i.imgur.com/y4N4vEX.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/U4fdPSI.png" width="49%">
-  <img src="https://i.imgur.com/LnmykFJ.png" width="49%">
+  <img src="https://i.imgur.com/gP1XFkf.png" width="49%">
+  <img src="https://i.imgur.com/PL89DjC.png" width="49%">
 </p>
 
 ---
 
 ## ⚙️ Installation
 
-To get started with Argus, follow these simple steps:
+### Quick Start
 
+#### Option 1: No Installation (Run Directly)
 ```bash
 git clone https://github.com/jasonxtn/argus.git
 cd argus
-pip install -r requirements.txt
+python -m argus
 ```
 
-Once installed, you can launch Argus with:
-
+#### Option 2: Using pip (Recommended)
 ```bash
-python argus.py
+pip install argus-recon
+argus
+```
+
+#### Option 3: Full Installation
+```bash
+git clone https://github.com/jasonxtn/argus.git
+cd argus
+chmod +x install.sh && ./install.sh
+python -m argus
+```
+
+#### Option 4: Docker
+```bash
+git clone https://github.com/jasonxtn/argus.git
+cd argus
+docker build -t argus-recon:latest .
+docker run -it --rm -v $(pwd)/results:/app/results argus-recon:latest
 ```
 
 ---
 
 ## 📖 Usage
 
-Argus offers a rich collection of tools categorized into three main areas:
+### Getting Started
 
-### Network & Infrastructure Tools
+1. **Launch Argus**:
+   ```bash
+   argus
+   # or if running from folder: python -m argus
+   ```
 
-These tools help you gather data about a network, uncovering vital details about servers, IP addresses, DNS records, and more:
+2. **Browse available modules**:
+   ```
+   argus> modules
+   ```
 
-1. **Associated Hosts**: Discover domains associated with the target.
-2. **DNS Over HTTPS**: Resolve DNS securely via encrypted channels.
-3. **DNS Records**: Collect DNS records, including A, AAAA, MX, etc.
-4. **DNSSEC Check**: Verify if DNSSEC is properly configured.
-5. **Domain Info**: Gather information such as registrar details and expiry dates.
-6. **Domain Reputation Check**: Check domain trustworthiness using various reputation sources.
-7. **IP Info**: Retrieve geographic and ownership details of an IP address.
-8. **Open Ports Scan**: Scan the target for open ports and services.
-9. **Server Info**: Extract key server details using various techniques.
-10. **Server Location**: Identify the physical location of the server.
-11. **SSL Chain Analysis**: Analyze the SSL certificate chain for trustworthiness.
-12. **SSL Expiry Alert**: Check SSL certificates for upcoming expiry.
-13. **TLS Cipher Suites**: List the supported TLS ciphers on the server.
-14. **TLS Handshake Simulation**: Simulate a TLS handshake to check for security issues.
-15. **Traceroute**: Trace the path packets take to reach the target.
-16. **TXT Records**: Fetch TXT records, often used for verification purposes.
-17. **WHOIS Lookup**: Perform WHOIS queries to gather domain ownership details.
-18. **Zone Transfer**: Attempt to perform DNS zone transfers.
-19. **HTTP/2 and HTTP/3 Support Checker**: Check if the server supports HTTP/2 and HTTP/3.
+3. **Select a module**:
+   ```
+   argus> use 1
+   ```
 
-### Web Application Analysis Tools
+4. **Set target and options**:
+   ```
+   argus> set target example.com
+   argus> set threads 10
+   ```
 
-These modules focus on understanding the structure and security of web applications:
+5. **Run the module**:
+   ```
+   argus> run
+   ```
 
-20. **Archive History**: View the target's history using internet archives.
-21. **Broken Links Detection**: Find broken links that may lead to user frustration or security gaps.
-22. **Carbon Footprint**: Evaluate the environmental impact of a website.
-23. **CMS Detection**: Detect the type of CMS used, like WordPress, Joomla, etc.
-24. **Cookies Analyzer**: Analyze cookies for secure attributes and potential privacy issues.
-25. **Content Discovery**: Discover hidden directories, files, and endpoints.
-26. **Crawler**: Crawl the site to uncover data and map out its structure.
-27. **Robots.txt Analyzer**: Analyze the `robots.txt` file for hidden resources.
-28. **Directory Finder**: Look for directories that may not be indexed publicly.
-29. **Email Harvesting**: Extract email addresses from the target domain.
-30. **Performance Monitoring**: Monitor the website's response time and load performance.
-31. **Quality Metrics**: Assess the quality of the site's content and user experience.
-32. **Redirect Chain**: Follow redirects to analyze if they're safe or malicious.
-33. **Sitemap Parsing**: Extract URLs from the site's sitemap.
-34. **Social Media Presence Scan**: Analyze the social media profiles linked to the target.
-35. **Technology Stack Detection**: Identify the technologies and frameworks the site uses.
-36. **Third-Party Integrations**: Discover any third-party services integrated into the site.
+### Commands Cheatsheet
 
-### Security & Threat Intelligence Tools
+| Command | Category | Description | Example |
+|---------|----------|-------------|---------|
+| `modules` | Discovery | List all modules | `modules` |
+| `modules -d` | Discovery | List with details | `modules -d` |
+| `search` | Discovery | Search by keyword | `search ssl` |
+| `use` | Selection | Select module | `use 42` |
+| `helpmod` | Help | Module help | `helpmod 42` |
+| `set target` | Config | Set target | `set target example.com` |
+| `set` | Config | Set options | `set threads 20` |
+| `unset` | Config | Unset options | `unset target` |
+| `opts` | Config | Show options | `opts` |
+| `scope` | Config | Show config | `scope` |
+| `profile` | Config | Apply profile | `profile speed` |
+| `run` | Execute | Run selected | `run` |
+| `runall` | Execute | Run category | `runall infra` |
+| `runfav` | Execute | Run favorites | `runfav` |
+| `last` | Execute | Re-run last | `last` |
+| `fav` | Favorites | Manage favorites | `fav add 42` |
+| `show modules` | Info | Browse modules | `show modules` |
+| `show api_status` | Info | Check APIs | `show api_status` |
+| `show options` | Info | Show options | `show options` |
+| `show options_full` | Info | Detailed options | `show options_full` |
+| `info` | Info | Project info | `info` |
+| `recent` | Info | Recent modules | `recent` |
+| `viewout` | Output | View cached output | `viewout` |
+| `grepout` | Output | Search output | `grepout "192.168"` |
+| `clear` | Utility | Clear screen | `clear` |
+| `banner` | Utility | Show banner | `banner` |
+| `reset` | Utility | Reset config | `reset` |
+| `exit` | Utility | Exit Argus | `exit` |
+| `quit` | Utility | Exit Argus | `quit` |
+| `help` | Help | Show help | `help` |
 
-The security modules in Argus are designed to assess the target's defenses and gather threat intelligence:
+#### 🔄 **Command Aliases**
+| Alias | Full Command | Description |
+|-------|--------------|-------------|
+| `hm` | `helpmod` | Module help |
 
-37. **Censys Reconnaissance**: Use Censys for in-depth details about the target's assets.
-38. **Certificate Authority Recon**: Examine the certificate authority details.
-39. **Data Leak Detection**: Check for potential data leaks and sensitive data exposure.
-40. **Exposed Environment Files Checker**: Identify publicly exposed `.env` files.
-41. **Firewall Detection**: Identify whether a firewall or WAF is protecting the target.
-42. **Global Ranking**: Look up the site's global ranking to gauge its popularity.
-43. **HTTP Headers**: Extract and evaluate HTTP response headers.
-44. **HTTP Security Features**: Check for secure HTTP headers such as HSTS, CSP, etc.
-45. **Malware & Phishing Check**: Scan the site for signs of malware and phishing risks.
-46. **Pastebin Monitoring**: Search paste sites for leaks associated with the target.
-47. **Privacy & GDPR Compliance**: Verify compliance with GDPR and other privacy regulations.
-48. **Security.txt Check**: Locate and analyze the `security.txt` file for vulnerability disclosure policies.
-49. **Shodan Reconnaissance**: Use Shodan to discover open ports, services, and vulnerabilities.
-50. **SSL Labs Report**: Get a detailed SSL/TLS assessment via SSL Labs.
-51. **SSL Pinning Check**: Check if SSL pinning is implemented on the site.
-52. **Subdomain Enumeration**: Discover subdomains of the target domain.
-53. **Subdomain Takeover**: Test whether subdomains are vulnerable to takeover.
-54. **VirusTotal Scan**: Check the target's reputation using VirusTotal.
-    
-### How to Use Argus
+#### 🎯 **Quick Reference**
+```bash
+# Basic workflow
+modules          # Browse available modules
+use 42           # Select module 42
+set target example.com
+run              # Execute module
 
-1. Launch Argus from the command line.
-2. Enter the tool number you want to use from the main menu.
-3. Follow the prompts to enter relevant information.
-4. Review the results and adjust your strategy accordingly.
+# Search and filter
+search ssl       # Find SSL-related modules
+modules tag:dns  # Filter by capability tag
 
-**Example Command:**
+# Batch operations
+runall infra     # Run all infrastructure modules
+runfav           # Run favorite modules
+
+# Information
+show modules     # Detailed module list
+helpmod 42       # Module-specific help
+scope            # Current configuration
+show api_status  # Check API configuration
+```
+
+### Example Session
 
 ```bash
-root@argus:~# 1
+$ argus
+
+argus> modules
+argus> use 1
+argus> set target example.com
+argus> set threads 10
+argus> run
+
+argus> modules -d
+argus> use 65
+argus> set max_pages 200
+argus> run
+
+argus> show api_status
+argus> fav add 1
+argus> runfav
 ```
-This command initiates the **Associated Hosts** tool.
 
 ---
 
+## 🛠️ Available Modules
 
-## 🛠 Configuration
+<div align="center">
 
-Certain modules require API keys to work. Make sure to add any necessary API keys in the `config/settings.py` file before running Argus to unlock full functionality.
+### **134 Security Reconnaissance Modules**
+
+*Comprehensive toolkit for network, web, and security analysis*
+
+</div>
 
 ---
+
+### 📋 **All Modules** *(135 total)*
+
+| Network & Infrastructure | Web Application Analysis | Security & Threat Intelligence |
+|--------------------------|---------------------------|--------------------------------|
+| 1. Associated Hosts | 53. Archive History | 103. Censys Reconnaissance |
+| 2. DNS Over HTTPS | 54. Broken Links Detection | 104. Certificate Authority Recon |
+| 3. DNS Records | 55. Carbon Footprint | 105. Data Leak Detection |
+| 4. DNSSEC Check | 56. CMS Detection | 106. Exposed Environment Files |
+| 5. Domain Info | 57. Cookies Analyzer | 107. Firewall Detection |
+| 6. Domain Reputation Check | 58. Content Discovery | 108. Global Ranking |
+| 7. HTTP/2 & HTTP/3 Support | 59. Crawler | 109. HTTP Headers |
+| 8. IP Info | 60. Robots.txt Analyzer | 110. HTTP Security Features |
+| 9. Open Ports Scan | 61. Directory Finder | 111. Malware & Phishing Check |
+| 10. Server Info | 62. Email Harvesting | 112. Pastebin Monitoring |
+| 11. Server Location | 63. Performance Monitoring | 113. Privacy & GDPR Compliance |
+| 12. SSL Chain Analysis | 64. Quality Metrics | 114. Security.txt Check |
+| 13. SSL Expiry Alert | 65. Redirect Chain | 115. Shodan Reconnaissance |
+| 14. TLS Cipher Suites | 66. Sitemap Parsing | 116. SSL Labs Report |
+| 15. TLS Handshake Simulation | 67. Social Media Presence | 117. SSL Pinning Check |
+| 16. Traceroute | 68. Technology Stack Detection | 118. Subdomain Enumeration |
+| 17. TXT Records | 69. Third-Party Integrations | 119. Subdomain Takeover |
+| 18. WHOIS Lookup | 70. JavaScript File Analyzer | 120. VirusTotal Scan |
+| 19. Zone Transfer | 71. CORS Misconfiguration Scanner | 121. CT Log Query |
+| 20. ASN Lookup | 72. Login Page Brute Identifier | 122. Breached Credentials Lookup |
+| 21. Reverse IP Lookup | 73. Hidden Parameter Discovery | 123. Cloud Bucket Exposure |
+| 22. IP Range Scanner | 74. Clickjacking Test | 124. JWT Token Analyzer |
+| 23. RDAP Lookup | 75. Form Grabber | 125. Exposed API Endpoints |
+| 24. NTP Information Leak | 76. Favicon Hashing | 126. Git Repository Exposure Check |
+| 25. IPv6 Reachability Test | 77. HTML Comments Extractor | 127. Typosquat Domain Checker |
+| 26. BGP Route Analysis | 78. CAPTCHA Presence Checker | 128. SPF / DKIM / DMARC Validator |
+| 27. CDN Detection | 79. JavaScript Obfuscation Detector | 129. Open Redirect Finder |
+| 28. Reverse DNS Scan | 80. Virtual Host Fuzzer | 130. Rate-Limit & WAF Bypass Test |
+| 29. Network Timezone Detection | 81. Session Cookie Lifetime Checker | 131. Security Changelog Diff |
+| 30. Geo-DNS Footprint | 82. HTML5 Feature Abuse Detector | 132. Session Hijacking (Passive) |
+| 31. SPF Network Extractor | 83. Autocomplete Vulnerability Checker | 133. Rogue Certificate Check |
+| 32. NS Geo/ASN Diversity | 84. Embedded Object Hunter | 134. JS Malware Scanner |
+| 33. DNS SLA Latency Monitor | 85. Multi-Language URL Tester | 135. Cloud Service Enumeration |
+| 34. RPKI Route Validity | 86. Pixel Tracker Finder | |
+| 35. Recursive Nameserver Leak | 87. SEO Abuse Detector | |
+| 36. Dual-Stack Behavior Profiler | 88. Dependency JS/CDN Scanner | |
+| 37. ICMP Reachability Matrix | 89. WebSocket Endpoint Sniffer | |
+| 38. IP Allocation History Tracker | 90. API Schema Grabber | |
+| 39. Autonomous Neighbor Peering Map | 91. Lazy-Load Resource Finder | |
+| 40. TLS Session Resumption Map | 92. HTTP Method Enumerator | |
+| 41. Network Certificate Inventory | 93. GraphQL Introspection Probe | |
+| 42. SSH Banner & Key Fingerprinter | 94. File Upload Surface Finder | |
+| 43. SNMP Public Community Checker | 95. DOM Sink Scanner | |
+| 44. SNMP Bulk Walk | 96. Cache Behavior Analyzer | |
+| 45. UDP Service Sampler | 97. Cookie Scope Diff Across Subdomains | |
+| 46. NetBIOS Name Query | 98. CSP Deep Analyzer | |
+| 47. TTL Analysis | 99. Third-Party Script Risk Profiler | |
+| 48. IRR Routing Registry Analyzer | 100. Static Asset Fingerprinter | |
+| 49. Dual Stack Diff | 101. Crawl Rules | |
+| 50. DNS CAA Checker | 102. Email Config | |
+| 51. Decoy DNS Beacon | | |
+| 52. Geo IP Spoof Detection | | |
+
+---
+
+### 🎯 **Module Usage Tips**
+
+<div align="center">
+
+**Quick Module Discovery**
+
+</div>
+
+```bash
+# Browse all modules
+modules
+
+# Filter by category
+modules infra    # Network & Infrastructure
+modules web      # Web Application Analysis  
+modules sec      # Security & Threat Intelligence
+
+# Search by capability
+search dns       # Find DNS-related modules
+search ssl       # Find SSL/TLS modules
+search api       # Find API testing modules
+
+# Get detailed help
+helpmod 42       # Module-specific help
+show modules -d  # Detailed module list
+```
+
+
+---
+
+## ⚡ Performance Profiles
+
+Pre‑configured scan depths and behaviors for different use cases:
+
+| Profile | Use When | Effect |
+|---------|----------|--------|
+| `speed` | Quick reconnaissance | Small crawl, faster timeout, minimal threads |
+| `deep` | Full comprehensive sweep | Large crawl, slower timeout, full cert chain, maximum threads |
+| `safe` | Low-impact scanning | Small crawl, conservative timeouts |
+
+**Usage:**
+```bash
+argus> profile deep
+argus> run 1 3 8
+```
+
+
+
+## 🛠️ Configuration
+
+### API Keys Setup
+
+Enhance functionality by configuring API keys in `config/settings.py` or as environment variables:
+
+```bash
+export VIRUSTOTAL_API_KEY="your_key_here"
+export SHODAN_API_KEY="your_key_here"
+export CENSYS_API_ID="your_id_here"
+export CENSYS_API_SECRET="your_secret_here"
+export GOOGLE_API_KEY="your_key_here"
+export HIBP_API_KEY="your_key_here"
+```
+
+**Check API status:**
+```bash
+argus> show api_status
+```
+
+### Configuration Options
+
+Edit `config/settings.py` to customize:
+- Default request timeouts and retry logic
+- Thread limits and concurrency settings
+- Export settings (TXT/CSV output)
+- Logging levels and destinations
+- User agent strings and headers
+
+---
+
+### Available Make Commands
+
+```bash
+make help          # Show all available commands
+make install       # Install Argus
+make install-dev   # Install with development dependencies
+make test          # Run tests
+make lint          # Run code linting
+make format        # Format code with black/isort
+make docker-build  # Build Docker image
+make security-check # Run security analysis
+```
+
+---
+
 ## 🔄 Changelog
 
-1.1 Release Notes : 
-- Added Emails Harvesting module
-- Added HTTP/2 and HTTP/3 Support Checker module
-- Added Check for Publicly Exposed Environment Files module
-- Fixed Txt Files Export
-- Updated Traceroute module
-- Updated Report Generation module
-- Added .gitignore file
+### Version 2.0 (Current)
+**Major refactor: Complete CLI redesign and module expansion**
+
+- **New interactive CLI** - Full command-line interface with 25+ commands
+- **135 modules** - Expanded from 50 modules
+- **Better UI** - Professional formatting and progress tracking
+- **Multi-threading** - Improved performance with concurrent execution
+- **API integrations** - Shodan, VirusTotal, Censys, SSL Labs support
+- **Export capabilities** - TXT, CSV, JSON output formats
+- **Configuration system** - Profiles, settings, and API key management
+- **Module discovery** - Search, browse, and favorite modules
+- **Batch operations** - Run multiple modules simultaneously
+
+### Version 1.x (Legacy)
+**Original simple number-based interface**
+
+- Simple number input system (1-50)
+- Basic 50 reconnaissance modules
+- Console text output only
+- Fixed configuration settings
 
 ---
+
+**Note**: Version 2.0 introduces breaking changes. Users must learn new CLI commands instead of the previous number-based system.
+
+---
+
 ## ⭐️ Show Your Support
 
 If this tool has been helpful to you, please consider giving us a star on GitHub! Your support means a lot to us and helps others discover the project.
 
+### Issues & Bug Reports
+
+- Check existing issues before reporting
+- Provide detailed reproduction steps
+- Include system information and error logs
+
+---

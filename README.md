@@ -18,8 +18,6 @@
 
 Argus is an all-in-one, Python-powered toolkit designed to streamline the process of information gathering and reconnaissance. With a user-friendly interface and a suite of powerful modules, Argus empowers you to explore networks, web applications, and security configurations efficiently and effectively.
 
-Whether you're conducting research, performing security assessments with proper authorization, or just curious about network infrastructures, Argus brings a wealth of information to your fingertips—all in one place.
-
 ## ⚠️ WARNING: LEGAL DISCLAIMER
 
 This tool is intended for **educational and ethical use only**. The author is not liable for any illegal use or misuse of this tool. Users are solely responsible for their actions and must ensure they have explicit permission to scan the target systems.
@@ -29,21 +27,22 @@ This tool is intended for **educational and ethical use only**. The author is no
 ## 👀 Screenshots
 
 Take a look at Argus in action:
+Take a look at Argus in action:
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/uUjTbCb.png" width="49%">
-  <img src="https://i.imgur.com/iPqLYX6.png" width="49%">
+  <img src="https://i.imgur.com/dAITama.png" width="49%">
+  <img src="https://i.imgur.com/8VtXyEW.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/SwcLyfU.png" width="49%">
-  <img src="https://i.imgur.com/bfxcx88.png" width="49%">
+  <img src="https://i.imgur.com/rEIPl2h.png" width="49%">
+  <img src="https://i.imgur.com/TVmc8gf.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/SgPJjH7.png" width="49%">
-  <img src="https://i.imgur.com/y4N4vEX.png" width="49%">
+  <img src="https://i.imgur.com/1I6x3Gp.png" width="49%">
+  <img src="https://i.imgur.com/9EZqNvK.png" width="49%">
 </p>
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/gP1XFkf.png" width="49%">
-  <img src="https://i.imgur.com/PL89DjC.png" width="49%">
+  <img src="https://i.imgur.com/U4fdPSI.png" width="49%">
+  <img src="https://i.imgur.com/LnmykFJ.png" width="49%">
 </p>
 
 ---
@@ -59,7 +58,7 @@ cd argus
 python -m argus
 ```
 
-#### Option 2: Using pip (Recommended)
+#### Option 2: Using pip
 ```bash
 pip install argus-recon
 argus
